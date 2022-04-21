@@ -1,0 +1,31 @@
+<header class="bg-light shadow mb-4">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
+            <a class="navbar-brand text-primary h4" routerLink="/">ShopLogo</a>
+            <ul class="navbar-nav fw-bold">
+                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">
+                    <a class="nav-link" routerLink="/">All products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="clothes">Clothes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="shoes">Shoes</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav align-items-center fw-bold ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/cart">
+                        <img src="/assets/img/trolley.png" width="40" alt="Trolley">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Counts:  {{ countProducts$ | async }} </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Total price: ${{ totalPrice$ | async | number : '1.2-2'}}</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
