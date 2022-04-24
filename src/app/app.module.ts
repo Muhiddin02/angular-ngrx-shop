@@ -9,13 +9,15 @@ import { CartComponent } from './cart/cart.component';
 import { StoreModule } from '@ngrx/store';
 import { HttpClientModule } from '@angular/common/http';
 import { cartReducer, metaReducerLocalStorage } from './state/cart.reducer';
+import { BasketComponent } from './basket/basket.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     DashboardComponent,
-    CartComponent
+    CartComponent,
+    BasketComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,27 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th> Price</th>
+            <th>Count</th>
+            <th>Total Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cartEntry of cartEntries$ | async" class="align-middle">
+            <td>{{cartEntry.product.id}}</td>
+            <td><img [src]="cartEntry.product.thumbnail" class="rounded-circle me-2" alt="Product Number" width="50" height="50"> <span>{{cartEntry.product.title}}</span></td>
+            <td>$ {{cartEntry.product.price}}</td>
+            <td>{{cartEntry.count}}</td>
+            <td>$ {{cartEntry.count*cartEntry.product.price}}</td>
+            <td>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button"(click)="increment(cartEntry)" class="btn btn-outline-success">+</button>
+                    <button type="button" (click)="decrement(cartEntry)" class="btn btn-outline-danger">- </button>
+                  </div>
+            </td>
+        </tr>
+    </tbody>
+</table> 
